@@ -217,7 +217,7 @@ module SVD
     if num.starts_with? '#'
       num = num.lstrip('#').to_u64(base: 2)
     else
-      num = num.to_u64(base: 10, prefix: true) # prefix: true handles 0x
+      num = num.downcase.to_u64(base: 10, prefix: true) # prefix: true handles 0x, downcase handles 0X
     end
 
     num * unit
